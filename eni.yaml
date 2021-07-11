@@ -1,0 +1,13 @@
+apiVersion: crd.k8s.amazonaws.com/v1alpha1
+kind: ENIConfig
+metadata:
+  name: apne2-az1
+spec:
+  subnet: subnet-0dda2c709afea3452
+---
+apiVersion: crd.k8s.amazonaws.com/v1alpha1
+kind: ENIConfig
+metadata:
+  name: apne2-az2
+spec:
+  subnet: subnet-04845f8bbefec6fbc

@@ -1,0 +1,21 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: btiwoom
+  region: ap-northeast-2
+
+vpc:
+  subnets:
+    private:
+      apne2-az1: { id: subnet-019969b6a5f7dd472 }
+      apne2-az2: { id: subnet-0732fb8924c55b646 }
+
+nodeGroups:
+  - name: ng-t3-large
+    labels: { role: workers }
+    instanceType: t3.large
+    desiredCapacity: 2
+    privateNetworking: true
+    ssh: # import public key from file
+      publicKeyPath: ~/.ssh/key/btiwoom.pub
